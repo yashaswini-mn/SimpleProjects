@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Uploader</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<div class="hero">
+    <div class="card">
+        <h1>Elon Musk</h1>
+        <p>@elonmusk</p>
+        <img src="../imageuploader/images/profile.jpg" alt="profile" id="profile-pic">
+        <label for="input-file">Update Image</label>
+        <input type="file" accept="image/jpeg , image/png, image/jpg" id="input-file">
+    </div>
+</div>
+
+<script>
+    let profilePic=document.getElementById("profile-pic");
+    let inputFile=document.getElementById("input-file");
+    inputFile.onchange=function(){
+        profilePic.src=URL.createObjectURL(inputFile.files[0]);
+    }
+</script>
+</body>
+</html>
